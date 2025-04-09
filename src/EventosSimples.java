@@ -27,12 +27,15 @@ public class EventosSimples {
             }
         });
 
-        // Evento de mouse (MouseEvent)
+    // Evento de mouse (MouseEvent)
         final int[] contador = {0};
         etiqueta.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 contador[0]++;
                 etiqueta.setText("Clics: " + contador[0]);
+                if (contador[0] == 5) {
+                    JOptionPane.showMessageDialog(null, "¡Llegaste a los 5 clicks!");
+                }
             }
         });
 
